@@ -52,13 +52,18 @@ jobs:
           push: false
           tags: ghcr.io/matrix-node:${{ github.sha }}-${{ matrix.arch }}
 
-      - name: Scan Docker image using Docker Scout
+      - name: Docker Scout Scan
         uses: docker/scout-action@v1
         with:
-          image: ghcr.io/${{ github.repository }}:${{ github.sha }}-${{ matrix.arch }}
-          dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
-          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
-          scan-type: full
+         command: cves
+         image: ghcr.io/***/matrix-docker-CI-CD:4cc2148ad8c027f73b136de0b6934c514380c629-amd64
+         dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
+         dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         summary: true
+         format: json
+         write-comment: true
+
 
       - name: Collect images for output
         id: set_output
