@@ -40,7 +40,7 @@ jobs:
         uses: docker/scout-action@v1
         with:
          command: cves
-         image: ghcr.io/hanna667/docker-CICD:latest
+         image: ghcr.io/hanna667/docker-CICD:v1.0.0
          registry-user: hanna667
          registry-password: ${{ secrets.GHCR_PAT }}
          dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
