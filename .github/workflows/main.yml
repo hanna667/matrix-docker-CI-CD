@@ -117,8 +117,6 @@ jobs:
         with:
          context: .
          push: true
-         platforms: linux/amd64
          tags: |
-          ghcr.io/hanna667/docker-CICD:latest
           ghcr.io/hanna667/docker-CICD:v1.0.0
- 
+          platforms: linux/amd64
