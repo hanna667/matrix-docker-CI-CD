@@ -41,12 +41,15 @@ jobs:
         with:
          command: cves
          image: ghcr.io/hanna667/docker-CICD:latest
+         registry-user: hanna667
+         registry-password: ${{ secrets.GHCR_PAT }}
          dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
          dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
          github-token: ${{ secrets.GITHUB_TOKEN }}
          summary: true
          write-comment: true
          format: json
+
 
 
       - name: Build Docker image for ${{ matrix.arch }}
