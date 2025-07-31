@@ -58,7 +58,6 @@ jobs:
          command: cves
          image: ghcr.io/***/matrix-docker-CI-CD:4cc2148ad8c027f73b136de0b6934c514380c629-amd64
          dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
-         dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
          github-token: ${{ secrets.GITHUB_TOKEN }}
          summary: true
          format: json
