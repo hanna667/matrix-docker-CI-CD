@@ -39,14 +39,14 @@ jobs:
       - name: Docker Scout CVE Scan
         uses: docker/scout-action@v1
         with:
-    command: cves
-    image: ghcr.io/hanna667/docker-CICD:latest
-    dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
-    dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    summary: true
-    write-comment: true
-    format: json
+         command: cves
+         image: ghcr.io/hanna667/docker-CICD:latest
+         dockerhub-user: ${{ secrets.DOCKERHUB_USER }}
+         dockerhub-password: ${{ secrets.DOCKERHUB_PASSWORD }}
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+         summary: true
+         write-comment: true
+         format: json
 
 
       - name: Build Docker image for ${{ matrix.arch }}
