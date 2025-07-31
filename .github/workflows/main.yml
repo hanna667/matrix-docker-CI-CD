@@ -112,14 +112,13 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build and Push Multi-Arch Docker Image
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: Dockerfile
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/hanna667/docker-CICD:v1.0.0
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+         context: .
+         push: true
+         platforms: linux/amd64
+         tags: |
+          ghcr.io/hanna667/docker-CICD:latest
+          ghcr.io/hanna667/docker-CICD:v1.0.0
+ 
